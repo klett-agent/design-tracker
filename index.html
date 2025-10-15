@@ -328,20 +328,6 @@
                     <div class="helper-text">Describe what you want to track and when to get notified</div>
                 </div>
 
-                <!-- CSS Selector -->
-                <div class="form-group">
-                    <label for="selector">
-                        Element Selector
-                        <span class="badge">OPTIONAL</span>
-                    </label>
-                    <input 
-                        type="text" 
-                        id="selector" 
-                        placeholder=".price-value, #product-price, [data-price]"
-                    >
-                    <div class="helper-text">CSS selector to help AI focus on specific elements (e.g., .price, #title)</div>
-                </div>
-
                 <!-- Advanced Settings -->
                 <div class="advanced-section">
                     <div class="advanced-header" onclick="toggleAdvanced()">
@@ -352,6 +338,20 @@
                     </div>
 
                     <div class="advanced-content" id="advancedContent">
+                        <!-- CSS Selector -->
+                        <div class="form-group">
+                            <label for="selector">
+                                Element Selector
+                                <span class="badge">OPTIONAL</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="selector" 
+                                placeholder=".price-value, #product-price, [data-price]"
+                            >
+                            <div class="helper-text">CSS selector to help AI focus on specific elements (e.g., .price, #title)</div>
+                        </div>
+
                         <div class="input-group">
                             <!-- Country Code -->
                             <div class="form-group">
