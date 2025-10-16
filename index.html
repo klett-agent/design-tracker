@@ -323,7 +323,7 @@
                     </label>
                     <textarea 
                         id="prompt" 
-                        placeholder="e.g., Extract the main product price. The price is shown as a number followed by ' zł'. "
+                        placeholder="e.g., Extract the product price."
                     ></textarea>
                     <div class="helper-text">Describe data to extract and how to identify the correct price element on the page</div>
                 </div>
@@ -349,7 +349,7 @@
                                 id="selector" 
                                 placeholder=".price-value, #product-price, [data-price]"
                             >
-                            <div class="helper-text">CSS selector to help AI focus on specific elements (e.g., .price, #title)</div>
+                            <div class="helper-text">CSS selector to help AI focus on specific elements (e.g., .price, #price-final, #price > div.final)</div>
                         </div>
 
                         <div class="input-group">
