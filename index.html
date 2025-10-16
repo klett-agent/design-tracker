@@ -452,7 +452,7 @@
             chevron.classList.toggle('open');
         }
 
-        document.getElementById('trackerForm').addEventListener('submit', function(e) {
+        document.getElementById('trackerForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const formData = {
@@ -465,9 +465,25 @@
                 proxy: parseInt(document.getElementById('proxy').value),
                 hft: document.getElementById('hft').checked
             };
-
-            console.log('Form Data:', formData);
-            alert('Tracker created successfully! 🎉\nCheck console for data.');
+        
+            try {
+                const response = await fetch('https://klett-agent.app.n8n.cloud/webhook/981c6cfc-0c4e-43a0-857d-88e2259ff0ee', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+        
+                if (response.ok) {
+                    alert('Tracker created successfully! 🎉');
+                } else {
+                    alert('Error creating tracker. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to connect to server.');
+            }
         });
 
         document.getElementById('country').addEventListener('input', function(e) {
